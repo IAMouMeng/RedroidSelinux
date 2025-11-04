@@ -49,7 +49,7 @@ PLOG(FATAL) << "execv(\"" << path << "\") failed";
 # root@orangepi5pro:/# make install_kernel && reboot # 安装内核
 
 root@orangepi5pro:/# apt update && apt install selinux-utils selinux-policy-default policycoreutils setools selinux-policy-dev checkpolicy -y
-root@orangepi5pro:/# vim /boot/boot.cmd # setenv bootargs # 后面新增 security=selinux selinux=1 enforcing=0 apparmor=0
+root@orangepi5pro:/# vim /boot/boot.cmd # setenv bootargs 后面新增 security=selinux selinux=1 enforcing=0 apparmor=0
 root@orangepi5pro:/# mkimage -C none -A arm -T script -d /boot/boot.cmd /boot/boot.scr
 root@orangepi5pro:/# reboot
 root@orangepi5pro:/# vim /etc/selinux/config # SELINUX=disabled 改成 SELINUX=permissive
@@ -60,7 +60,7 @@ Permissive
 
 ## 编译安装 android12-dev 规则 等待重启（时间可能较长）
 ```shell
-root@orangepi5pro:/# make build && make install && make relabel
+root@orangepi5pro:/# make install && make relabel
 root@orangepi5pro:~# reboot
 ```
 

@@ -35,7 +35,7 @@ write_policy:
 build:
 	checkpolicy -U allow -c 33 -M -o policy.33 policy.conf
 
-install:
+install: build
 	mkdir -p $(BASE_DIR)/mls-kernel/policy
 	mkdir -p $(BASE_DIR)/mls-kernel/contexts/files
 	install -m 644 ./policy-files/seusers $(BASE_DIR)/mls-kernel
