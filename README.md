@@ -58,10 +58,19 @@ root@orangepi5pro:~# getenforce
 Permissive
 ```
 
-## 编译安装 android12-dev 规则 等待重启（时间可能较长）
+## 编译安装 android12-dev 规则
 ```shell
-root@orangepi5pro:/# make install && make relabel
-root@orangepi5pro:~# reboot
+root@orangepi5pro:~/RedroidSelinux# make install && make relabel
+root@orangepi5pro:~/RedroidSelinux# ls -l /etc/selinux/mls-kernel/ # 确认安装成功
+total 12
+drwxr-xr-x. 3 root root 4096 Nov  4 20:21 contexts
+drwxr-xr-x. 2 root root 4096 Nov  4 20:21 policy
+-rw-r--r--. 1 root root   16 Nov  4 20:21 seusers
+root@orangepi5pro:~/RedroidSelinux# vim /etc/selinux/config # 修改 SELINUXTYPE=default 为 mls-kernel
+root@orangepi5pro:~/RedroidSelinux# reboot
+
+# 主机开机后查看class db是否生成 property_service 未生成或无法开机请自行排障，首次开机非常慢 耐心等
+root@orangepi5pro:~# ls -l /sys/fs/selinux/class | grep property_service
 ```
 
 **开机后，使用以下命令实时查看 SELinux 审计日志，补充 policy.conf：**
