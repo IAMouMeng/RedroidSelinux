@@ -46,7 +46,7 @@ PLOG(FATAL) << "execv(\"" << path << "\") failed";
 ## 主机开启 SELINUX （可能需要重新编译内核需开启selinux支持）
 
 ```shell
-# root@orangepi5pro:/# make install_kernel && reboot 安装内核
+# root@orangepi5pro:/# make install_kernel && reboot # 安装内核
 
 root@orangepi5pro:/# apt update && apt install selinux-utils selinux-policy-default policycoreutils setools selinux-policy-dev checkpolicy -y
 root@orangepi5pro:/# apt update && apt install selinux-utils selinux-policy-default policycoreutils setools selinux-policy-dev checkpolicy -y
@@ -60,11 +60,11 @@ Permissive
 ```
 
 ## 编译安装 android12-dev 规则 等待重启（时间可能较长）
-···
+···shell
 root@orangepi5pro:/# make build && make install && make relabel
 root@orangepi5pro:~# reboot
 ···
 
-### 开机后 通过 tail -f /var/log/audit/audit.log 对 policy.conf 进行补充
+** 开机后 通过 tail -f /var/log/audit/audit.log 对 policy.conf 进行补充 **
 
 参考来源：https://github.com/SELinuxProject/selinux-notebook
