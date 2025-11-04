@@ -60,6 +60,7 @@ Permissive
 
 ## 编译安装 android12-dev 规则
 ```shell
+root@orangepi5pro:~/RedroidSelinux# git clone https://github.com/IAMouMeng/RedroidSelinux && cd RedroidSelinux
 root@orangepi5pro:~/RedroidSelinux# make install && make relabel
 root@orangepi5pro:~/RedroidSelinux# ls -l /etc/selinux/mls-kernel/ # 确认安装成功
 total 12
