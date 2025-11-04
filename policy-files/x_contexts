@@ -1,0 +1,5 @@
+client * u:r:kernel:s0
+property * u:r:kernel:s0
+extension * u:r:kernel:s0
+selection * u:r:kernel:s0
+event * u:r:kernel:s0
