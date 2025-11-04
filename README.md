@@ -60,11 +60,15 @@ Permissive
 ```
 
 ## 编译安装 android12-dev 规则 等待重启（时间可能较长）
-···shell
+```shell
 root@orangepi5pro:/# make build && make install && make relabel
 root@orangepi5pro:~# reboot
-···
+```
 
-** 开机后 通过 tail -f /var/log/audit/audit.log 对 policy.conf 进行补充 **
+**开机后，使用以下命令实时查看 SELinux 审计日志，补充 policy.conf：**
+
+```shell
+tail -f /var/log/audit/audit.log
+```
 
 参考来源：https://github.com/SELinuxProject/selinux-notebook
