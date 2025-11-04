@@ -72,6 +72,8 @@ root@orangepi5pro:~/RedroidSelinux# reboot
 
 # 主机开机后查看class db是否生成 property_service 未生成或无法开机请自行排障，首次开机非常慢 耐心等
 root@orangepi5pro:~# ls -l /sys/fs/selinux/class | grep property_service
+root@orangepi5pro:~# id
+uid=0(root) gid=0(root) groups=0(root) context=u:r:kernel:s0
 ```
 
 **开机后，使用以下命令实时查看 SELinux 审计日志，补充 policy.conf：**
