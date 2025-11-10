@@ -1,2 +1,3 @@
-/.*	u:r:kernel:s0
-/	u:r:kernel:s0
+/.*                            u:object_r:kernel:s0
+/                              u:object_r:kernel:s0
+/dev/mali[0-9]*                u:object_r:gpu_device:s0
