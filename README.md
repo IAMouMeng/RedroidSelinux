@@ -76,7 +76,7 @@ root@orangepi5pro:~# id
 uid=0(root) gid=0(root) groups=0(root) context=u:r:kernel:s0
 ```
 
-**开机后，使用以下命令实时查看 SELinux 审计日志，补充 policy.conf：**
+**开机后，使用以下命令实时查看 SELinux 审计日志，补充 policy.conf，添加vendor下.rc里面的seclabel等：**
 
 ```shell
 tail -f /var/log/audit/audit.log
